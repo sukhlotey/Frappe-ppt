@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reveal.js Presentation</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css"
+      id="theme"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Slide 1 -->
+        <section class="first-slide" data-background="./images/sky.gif">
+          <section>
+            <h1>Presentation of Frappe</h1>
+            <p>by Sukhpreet Singh</p>
+          </section>
+        </section>
+
+        <!-- Slide 2 -->
+        <section data-background-color="#2E3B4A">
+          <h2>Contents</h2>
+          <ul>
+            <li>What is Frappe</li>
+            <li>Installation</li>
+            <li>Requirements</li>
+            <li>Doctype</li>
+            <li>Library Management System</li>
+    
+          </ul>
+        </section>
+
+        <!-- Slide 3 with fragments -->
+        <section>
+          <section data-background-color="#566375">
+            <h2>Frappe</h2>
+            <p style="text-align: justify; font-size: 30px">
+              Frappe Framework is a full-stack, open-source web application
+              framework primarily written in Python and JavaScript, designed to
+              build database-driven applications with a low-code approach, where
+              developers can create complex web applications with minimal coding
+              by utilizing its built-in features and configuration options; it
+              is most notably known for powering the ERPNext software.
+            </p>
+          </section>
+          <section data-background-color="#726385">
+            <h2>Why Frappe?</h2>
+            <p style="text-align: justify; font-size: 30px">
+              The key difference in Frappe compared to other frameworks is that
+              meta-data is also treated as data. This enables you to build
+              front-ends very easily. We believe in a monolithic architecture,
+              so Frappe comes with almost everything you need to build a modern
+              web application. It has a full featured Admin UI called the Desk
+              that handles forms, navigation, lists, menus, permissions, file
+              attachment and much more out of the box.
+            </p>
+          </section>
+          <section data-background-color="#726873">
+            <h2>Key points about Frappe Framework</h2>
+            <ul style="font-size: 30px; text-align: justify;">
+              <li>
+                Full-stack: Includes both front-end and back-end components,
+                allowing developers to build complete web applications within
+                the framework.
+              </li>
+              <li>
+                Low-code approach: Emphasizes configuration over coding,
+                enabling rapid development by defining application structure
+                through metadata rather than writing extensive code.
+              </li>
+              <li>Database: Primarily uses MariaDB as the database backend.</li>
+              <li>
+                ERPNext integration: Frappe Framework is the foundation for the
+                popular open-source ERP software, ERPNext.
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section >
+          <section data-background-color="#2E3B4E">
+            <h2 style="color: white">Installation in Linux OS</h2>
+            <ul style="color: lightgray">
+              <li>MariaDB</li>
+              <li>Python 3.10/11/12</li>
+              <li>Node 18 or 20</li>
+              <li>Redis 6 (caching and realtime updates)</li>
+              <li>Yarn 1.12+ (js dependency manager)</li>
+              <li>Pip 20+ (py dependency)</li>
+              <li>wkhtmltopdf (for pdf generation)</li>
+              <li>cron</li>
+            </ul>
+          </section>
+          <section data-background-color="#3a373b">
+            <h2>Steps</h2>
+            <p>Open Terminal</p>
+            <small>$ sudo apt update</small>
+            <p>Install git python and redis</p>
+            <small>$ sudo apt install git python-is-python3 python3-dev python3-pip
+              redis-server
+            </small>
+            <p>Install MariaDB</p>
+            <small>$ sudo apt install mariadb-server mariadb-client.</small>
+            <p>What if you not getting prompt?</p>
+            <small>Run this then</small><br>
+            <small><i
+              >Remember: only run it if you're not prompted the password during
+              setup.</i></small>
+            <small>$ mariadb-secure-installation</small>
+          </section>
+          <section data-background-color="#804a62">
+            <p>Install Node</p>
+            <small>It would be better if installing node using nvm</small>
+            <small>$ curl -o-
+              https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh |
+              bash
+            </small>
+            <small>$ nvm install 18</small>
+            <p>Install yarn using npm</p>
+            <small>$ npm install -g yarn</small>
+            <p>Install wkhtmltopdf</p>
+            <small>$ sudo apt install xvfb libfontconfig </small>
+            <small>
+              Download and install wkhtmltopdf package from <a
+                href="https://wkhtmltopdf.org/downloads.html">https://wkhtmltopdf.org/downloads.html</a>
+               then run this command to install the package.
+            </small><br>
+            <small>$ sudo dpkg -i wkhtmltox_file.deb </small>
+          </section>
+          <section data-background-color="#7e804a">
+            <h2>Install Bench CLI</h2>
+            <p>Install bench via pip3</p>
+            <small>$ pip install frappe-bench </small>
+            <small
+              >Depending on your OS version and python/pip version, you may get
+              an error here regarding an externally-managed-environment You can
+              work around this for now by running or use virtualenv</small
+            >
+            <small>$ pip install frappe-bench --break-system-packages </small>
+            <p>Create Your first bench</p>
+            <small>$ cd~</small><br>
+            <small>$ bench init frappe-bench</small>
+          </section>
+        </section>
+
+        <!-- Slide 5 with Markdown -->
+        <section>
+          <section data-background-color="#2a2b09">
+            <h2>Requirements</h2>
+            <p>Software</p>
+            <ul>
+              <li>Python</li>
+              <li>MariaDB or PostgreSQL</li>
+              <li>JavaScript</li>
+              <li>JQuery</li>
+              <li>Git</li>
+              <li>Github</li>
+            </ul>
+            <p>Hardware</p>
+            <small
+              >A laptop or desktop with at least 4GB of RAM and a dual core
+              CPU</small
+            >
+          </section>
+          <section data-background-color="#2d2e17">
+            <p>Operating System</p>
+            <small>A unix-based operating system like Linux or Mac OS</small>
+            <p>Need to learn</p>
+            <ul>
+              <li>HTML and CSS</li>
+              <li>JavaScript and JQuery</li>
+              <li>Jinja Templating</li>
+              <li>Git and Github</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+
+          <section data-background-color="#3f703a">
+            
+            <h2>DocType</h2>
+          <small>A DocType is the core building block of any application based on the Frappe Framework.
+            It describes the Model and the View of your data. It contains what fields are stored for your data, and how they behave with each other. It contains information about how your data is named. The forms like Sales Order, Sales Invoices, Work Order are added as DocTypes in the backend.
+            DocType allows you to insert custom forms in ERPNext as per your requirement.
+            To create a new DocType, go to:
+            Setup > Customize > Doctype > New</small>
+          </section>
+          <section data-background-color="#324a30">
+            <h2>How to create a New DocType</h2>
+            <small>1. Name: Enter the name of the new DocType.<br>
+             2. Module: Enter which module would you like the new <br>3. DocType to be added to.<br>
+              Save.</small>
+              <br>
+              <img style="width: 800px; border: 5px solid #000; border-radius: 10px;" src="https://docs.erpnext.com/files/doctype-employee-transfer.png" alt="">
+
+          </section>
+          <section data-background-color="#052b01">
+            <h2>Fields</h2>
+            <img style="width: 800px; border: 5px solid #000; border-radius: 10px;" src="https://docs.erpnext.com/files/doctype-employee-transfer-fields.png" alt="">
+
+          </section>
+            <section data-background-color="#283b26">
+              <h2>Permission rules</h2>
+              <small>You can define the Permission Rules for the DocType here, and configure which users would be able to use or make changes to this DocType. </small>
+              <img style="width: 800px; border: 5px solid #000; border-radius: 10px;" src="https://docs.erpnext.com/files/doctype-employee-transfer-permissions.png" alt="">
+
+          </section>
+        </section>
+
+
+        <section data-background-color="#2E3B4A" >
+         
+          <section style="text-align: left">
+            <h2>Library Management System</h2>
+            <small>1. Create the frappe-bench directory</small>
+            <br />
+            <small>bench init frappe-bench</small>
+            <small
+              ><i
+                >This will create a directory named frappe-bench in your current
+                working directory. It will do the following:</i
+              ></small
+            >
+            <br /><br />
+            <small
+              >1. Create a python virtual environment under env directory.
+            </small>
+            <small
+              >2. Fetch and install the frappe app as a python package.
+            </small>
+            <br />
+            <small>3. Install node modules of frappe. </small>
+            <small>Build static assets. </small>
+          </section>
+          <section>
+            <h2>Start Bench Server</h2>
+            <small>cd frappe-bench</small>
+            <small>bench start</small>
+            <br />
+            <img
+              style="border-radius: 10px; border: 5px solid #fff"
+              src="./images/start-bench.png"
+            />
+          </section>
+          <section >
+            <h2>Create App</h2>
+            <small>Create our Library Management app</small>
+            <br />
+            <small>bench new-app library_management</small>
+            <br />
+            <div style="text-align: left; font-size: x-large; margin-left: 20%;"
+              >App Title (default: Library Management):<br />
+              App Description: This is Library Management System<br />
+              App Publisher: Sukhpreet Singh<br />
+              App Email: sukh.singh@gmail.com<br />
+              App Icon (default 'octicon octicon-file-directory'):<br />
+              App Color (default 'grey'):<br />
+              App License (default 'MIT'):</div
+            >
+            <img style="border-radius: 10px; border: 5px solid #fff;" src="./images/app-install.png" />
+          </section>
+          <section>
+            <h2>App directory structure</h2>
+            <p style="font-size: x-large; text-align: left; font-size: large; margin-left: 20%;">
+              apps/library_management<br />
+              ├── README.md<br />
+              ├── library_management<br />
+              │ ├── hooks.py<br />
+              │ ├── library_management<br />
+              │ │ └── __init__.py<br />
+              │ ├── modules.txt<br />
+              │ ├── patches.txt<br />
+              │ ├── public<br />
+              │ │ ├── css<br />
+              │ │ └── js<br />
+              │ ├── templates<br />
+              │ │ ├── __init__.py<br />
+              │ │ ├── includes<br />
+              │ │ └── pages<br />
+              │ │ └── __init__.py<br />
+              │ └── www<br />
+              └── pyproject.toml<br />
+            </p>
+          </section>
+          <section>
+            <h2>Explaination</h2>
+            <p style="font-size: x-large; text-align: left;">
+             <b>library_management: </b> This directory will contain all the source
+              code for your app<br />
+              public: Store static files that will be served from Nginx in
+              production<br />
+              <b>templates:</b> Jinja templates used to render web views<br />
+              <b>www:</b> Web pages that are served based on their directory path<br />
+              <b>library_management:</b> Default Module bootstrapped with app<br />
+              <b>modules.txt:</b> List of modules defined in the app<br />
+              <b>patches.txt:</b> Patch entries for database migrations<br />
+              <b>hooks.py:</b> Hooks used to extend or intercept standard functionality
+              provided by the framework<br />
+             <b>pyproject.toml:</b> Specifies how your app is built, you can
+              optionally add 3rd party Python dependencies here which will get
+              installed when your app is installed.<br />
+            </p>
+          </section>
+          <section>
+            <h2>Create a Site</h2>
+            <small>bench new-site library.localhost</small><br />
+            <small> MySQL root password:</small><br />
+            <img style="border-radius: 10px; border: 5px solid #fff;" src="./images/install-site.png" alt="" /><br />
+            <small
+              >Now, you will have a new folder named library.localhost in the
+              sites directory.</small
+            >
+          </section>
+          <section>
+            <h2>Site Directory Structure</h2>
+            <p style="font-size: x-large; text-align: left; margin-left: 10%;">
+              sites/library.localhost<br />
+              ├── indexes<br />
+              │ └── web_routes<br />
+              ├── locks<br />
+              ├── logs<br />
+              ├── private<br />
+              │ ├── backups<br />
+              │ └── files<br />
+              ├── public<br />
+              │ └── files<br />
+              └── site_config.json<br />
+            </p>
+          </section>
+          <section>
+            <h2>Access site in your browser</h2>
+            <small>bench allows you to create multiple sites and access them separately in the browser on the same port. This is what we call multi-tenancy support in bench.</small>
+            <br><br>
+            <small>Frappe will identify which site to serve by matching the hostname of the request with the site name, so you should be able to access your site on http://library.localhost:8000</small>
+            <br>
+            <br>
+            <small>If this does not work for you it's because we have to tell our operating system that library.localhost should point to localhost. To do that, you can add the following entry to your /etc/hosts file.</small>
+            <br><br>
+            <small><i>127.0.0.1 library.localhost
+            </i></small><br>
+            <small>$ bench --site library.localhost add-to-hosts
+            </small>
+          
+          </section>
+          <section>
+            <h2>Open Browser</h2>
+            <small>Write: http://localhost:8000/#login</small><br>
+              <img style="border: 5px solid #000; border-radius: 10px;" src="./images/browser-view.png" alt="">
+         <br>
+            <small>Now You can access your site http://library.localhost:8000</small>
+          </section>
+          <section>
+            <h2>Install app on site</h2>
+            <small>$ bench --site library.localhost install-app library_management</small>
+
+              <small>Installing library_management...
+              </small>
+              <small><i>To confirm if the app was installed</i></small>
+            <small>$ bench --site library.localhost list-apps
+            </small><br>
+            <small>
+              You should see:<br>
+              frappe<br>
+              library_management
+            </small>
+          </section>
+          <section>
+            <h2>Login to desk</h2>
+            <img style="border: 5px solid #000; border-radius: 10px; width: 650px;" src="./images/desk.png" alt="">
+          </section>
+          <section>
+            <h2>Create a DocType</h2>
+            <small>Before we can create DocTypes, we need to enable developer mode on our bench. This will enable boilerplate creation when we create doctypes and we can track them into version control with our app.</small>
+            <small style="text-align: left;">$ bench set-config -g developer_mode true<br>
+              $ bench start</small>
+              <small style="text-align: left;">Click on DocType List and create a new DocType with name of Article</small>
+              <small style="text-align: left;">The first doctype we will create is Article. To create it, click on New.<br>
+
+                Enter Name as Article<br>
+                Select Library Management in Module<br>
+                Add the following fields in the Fields table:<br>
+                
+                Article Name (Data, Mandatory)<br>
+                Image (Attach Image)<br>
+                Author (Data)<br>
+                Description (Text Editor)<br>
+                ISBN (Data)<br>
+                Status (Select) - Enter two options: Issued and Available (Type Issued, hit enter, then type Available)<br>
+                Publisher (Data)</small>
+
+          </section>
+          <section>
+            <h2>Database Table</h2>
+            <small>$ bench --site library.localhost mariadb</small><br>
+            <small style="text-align: left;">Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>
+              Your MariaDB connection id is 2445938<br>
+              Server version: 10.4.13-MariaDB Homebrew<br>
+              
+              Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.<br>
+              
+              Type 'help;' or '\h' for help. Type '\c' to clear the <br>current input statement.</small>
+              <small>MariaDB [_ad03fa1a016ca1c4]> desc tabArticle;</small><br>
+              
+          </section>
+          <section>
+            <h2>View in Mariadb</h2>
+            <img style="border: 5px solid #fff; border-radius: 10px; width: 650px;"  src="./images/mariadb.png" alt="">
+          </section>
+          <section>
+            <h2>Multiple DocTypes</h2>
+            <small>Library Member</small><br>
+            <small style="text-align: left;">First Name (Data, Mandatory)
+              Last Name (Data)<br>
+              Full Name (Data, Read Only)<br>
+              Email Address (Data)<br>
+              Phone (Data)</small><br>
+            <small>Library Membership</small><br>
+            <small style="text-align: left;">Library Member (Link, Mandatory)<br>
+              Full Name (Data, Read Only)<br>
+              From Date (Date)<br>
+              To Date (Date)<br>
+              Paid (Check)</small>
+          </section>
+          <section>
+            <h2>Web view Pages</h2>
+            <small>Enable Has Web View and Allow Guest to View<br>
+              Enter articles in the Route field<br>
+              Add fields named Route and Published in the fields table<br>
+              Click on Save</small><br>
+              <img style="border-radius: 10px; border: 5px solid #000;" src="https://frappeframework.com/files/148695460-d90b4b4f-1bf5-44cb-939c-a620786dc777.png" alt="">
+              <img style="border-radius: 10px; border: 5px solid #000;" src="https://frappeframework.com/files/148695486-f4674a7b-2d6f-42ab-a279-b17342d75e9b.png" alt="">
+          </section>
+          <section>
+            <h2>Customize Web View Template</h2>
+            <small>The default web view that is generated is pretty barebones and serves only as a starting point for us to customize it. When we made Article a web view, two HTML files were created namely: article.html and article_row.html</small>
+            <small><i>article.html</i></small><br>
+            <small style="font-size: medium;">{% extends "templates/web.html" %}<br>
+
+              {% block page_content %}<br>
+              
+              ![{{ title }}]({{ image }})<br>
+              
+              {{ title }}<br>
+              ===========<br>
+              
+              By {{ author }}<br>
+             
+               {%- if status == 'Available' -%}<br>
+               Available<br>
+               {%- elif status == 'Issued' -%}<br>
+              
+               Issued<br>
+              
+               {%- endif -%}<br>
+              
+              Publisher: **{{ publisher }}**<br>
+              ISBN: **{{ isbn }}**<br>
+              
+              {{ description }}<br>
+              
+              {% endblock %}<br>
+              </small>
+          </section>
+          <section>
+            <small>Write book route at the end of the URL</small>
+            <img style="width: 600px;border-radius: 10px; border: 5px solid #000;" src="./images/book.png" alt="">
+          </section>
+          <section>
+            <h2>List of Books</h2>
+            <small >article\_row.html</small><br>
+            <small style="font-size: medium;">
+              ![{{ doc.name }}]({{ doc.image }})<br>
+              
+              [{{ doc.name }}]({{ doc.route }})<br>
+              By {{ doc.author }}<br>
+           
+              </small><br>
+              <img style="width: 400px;border-radius: 10px; border: 5px solid #000;" src="./images/list.png" alt="">
+          </section>
+        </section>
+        <section data-background="./images/thankyou.gif">
+          <h1 style="color: #fff; font-size: 120px">Thank You!</h1>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+
+    <script>
+      Reveal.initialize({
+        plugins: [RevealMarkdown, RevealHighlight],
+        slideNumber: true, 
+        hash: true, 
+      });
+    </script>
+  </body>
+</html>
